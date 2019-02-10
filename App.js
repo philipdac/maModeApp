@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
 
-import Login from './components/Login';
+import LoginScreen from './screens/LoginScreen';
 
 export default class App extends Component
 {
@@ -9,7 +9,7 @@ export default class App extends Component
     {
         return (
             <View style={styles.container}>
-                <Login />
+                <LoginScreen />
             </View >
         );
     }

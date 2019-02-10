@@ -11,7 +11,9 @@ A prototype of maMode project, built with React Native
 ## HOW TO RUN THE APP IN WINDOWS
 
 1. Run below command in a console (replace the <USERNAME> with your Windows username):
+
     cd C:\Users\<USERNAME>\AppData\Local\Android\Sdk\emulator
+
     emulator -avd Pixel_2_XL_API_28
 
 2. Run "react-native run-android" in another console.

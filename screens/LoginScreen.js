@@ -3,7 +3,7 @@ import { Dimensions, Image, KeyboardAvoidingView, Platform, StyleSheet, Text, Te
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class Login extends Component
+export default class LoginScreen extends Component
 {
     constructor(props)
     {
@@ -38,15 +38,21 @@ export default class Login extends Component
                     <Text style={[styles.subLogin, styles.subText]}>Forgot your login details? Get help</Text>
                     <Text style={[styles.subText]}>OR</Text>
 
-                    <Button title="Log in with Facebook" type="clear" icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}></Button>
+                    <Button title="Log in with Facebook" type="clear"
+                        icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}
+                        onPress={this._loginnAsync}></Button>
 
                     <Text style={[styles.subText]}>Don't have an account? Sign up.</Text>
                 </KeyboardAvoidingView>
             </View>
         );
     }
+    _loginAsync = async () =>
+    {
+        await AsyncStorage.setItem('userToken', 'authenticated');
+        this.props.navigation.navigate('App');
+    };
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

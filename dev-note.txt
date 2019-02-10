@@ -8,3 +8,6 @@ https://thinkmobiles.com/blog/how-much-cost-make-app-like-instagram/
 
 Google Auth
 https://github.com/react-native-community/react-native-google-signin
+
+Navigation
+https://github.com/birkir/hekla
