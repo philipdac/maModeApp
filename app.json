@@ -1,0 +1,10 @@
+{
+    "name": "maModeApp",
+    "displayName": "maModeApp",
+    "icon": "./assets/images/logo.png",
+    "splash": {
+        "image": "./assets/images/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+    }
+}

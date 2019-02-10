@@ -1,0 +1,10 @@
+
+
+Add logo
+https://medium.com/react-native-training/how-to-easily-configure-launch-icons-in-react-native-android-ios-2e1f351496ed
+
+Big pic
+https://thinkmobiles.com/blog/how-much-cost-make-app-like-instagram/
+
+Google Auth
+https://github.com/react-native-community/react-native-google-signin
