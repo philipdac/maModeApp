@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import LoginScreen from './screens/LoginScreen';
+import HomeScreen from './screens/HomeScreen';
+
+const RootStack = createStackNavigator(
+    {
+        Home: HomeScreen,
+        Login: LoginScreen,
+    },
+    {
+        initialRouteName: 'Login',
+        headerMode: 'none',
+    }
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends Component
 {
     render()
     {
-        return (
-            <View style={styles.container}>
-                <LoginScreen />
-            </View >
-        );
+        return <AppContainer />;
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#FFFFFF',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

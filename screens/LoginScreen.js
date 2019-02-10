@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, Image, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { AsyncStorage, Dimensions, Image, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -31,7 +31,8 @@ export default class LoginScreen extends Component
                         onChangeText={(text) => this.setState({ password })}
                         value={this.state.password}></TextInput>
 
-                    <TouchableOpacity style={[styles.buttonContainer]}>
+                    <TouchableOpacity style={[styles.buttonContainer]}
+                        onPress={this._loginAsync}>
                         <Text style={[styles.buttonText]}>Log In</Text>
                     </TouchableOpacity>
 
@@ -39,8 +40,7 @@ export default class LoginScreen extends Component
                     <Text style={[styles.subText]}>OR</Text>
 
                     <Button title="Log in with Facebook" type="clear"
-                        icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}
-                        onPress={this._loginnAsync}></Button>
+                        icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}></Button>
 
                     <Text style={[styles.subText]}>Don't have an account? Sign up.</Text>
                 </KeyboardAvoidingView>
@@ -49,8 +49,10 @@ export default class LoginScreen extends Component
     }
     _loginAsync = async () =>
     {
+        console.log('login clicked');
+
         await AsyncStorage.setItem('userToken', 'authenticated');
-        this.props.navigation.navigate('App');
+        this.props.navigation.navigate('Home');
     };
 }
 const styles = StyleSheet.create({
