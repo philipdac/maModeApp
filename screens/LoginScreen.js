@@ -39,8 +39,12 @@ export default class LoginScreen extends Component
                     <Text style={[styles.subLogin, styles.subText]}>Forgot your login details? Get help</Text>
                     <Text style={[styles.subText]}>OR</Text>
 
-                    <Button title="Log in with Facebook" type="clear"
-                        icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}></Button>
+                    <View style={{ flexDirection: "row" }}>
+                        <Button title="Log in with Facebook" type="clear"
+                            icon={<Icon name="logo-facebook" size={28} style={styles.iconLeft} />}></Button>
+                        <Button title="" type="clear"
+                            icon={<Icon name="ios-more" size={20} style={styles.iconRight} />}></Button>
+                    </View>
 
                     <Text style={[styles.subText]}>Don't have an account? Sign up.</Text>
                 </KeyboardAvoidingView>
@@ -105,5 +109,10 @@ const styles = StyleSheet.create({
     iconLeft: {
         color: '#2196F3',
         paddingRight: 10,
+    },
+    iconRight: {
+        color: '#2196F3',
+        paddingLeft: 10,
+        paddingTop: 8,
     },
 });
