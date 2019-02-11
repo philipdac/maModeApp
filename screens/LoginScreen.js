@@ -8,7 +8,7 @@ export default class LoginScreen extends Component
     constructor(props)
     {
         super(props);
-        this.state = { username: 'philipdac@gmail.com', password: 'Abcd@4321' };
+        this.state = { username: 'maMode@gmail.com', password: 'Abcd@4321' };
     }
     render()
     {
@@ -53,8 +53,6 @@ export default class LoginScreen extends Component
     }
     _loginAsync = async () =>
     {
-        console.log('login clicked');
-
         await AsyncStorage.setItem('userToken', 'authenticated');
         this.props.navigation.navigate('Home');
     };
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
     input: {
         borderColor: 'lightgray',
         borderRadius: 4,
-        borderWidth: 0.5,
+        borderWidth: StyleSheet.hairlineWidth,
         padding: 12,
         marginBottom: 12,
         height: 40,
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         borderColor: '#2196F3',
         borderRadius: 4,
-        borderWidth: 0.5,
+        borderWidth: StyleSheet.hairlineWidth,
         height: 40,
         width: Dimensions.get('window').width,
         maxWidth: 320,
