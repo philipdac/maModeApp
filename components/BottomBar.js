@@ -24,16 +24,19 @@ export default class BottomBar extends React.Component
             <View style={{ flexDirection: "row", marginTop: 12 }}>
                 <Button title="" type="clear"
                     icon={<Icon name="home" size={22} style={styles.icon} />}></Button>
+                <View style={{ flex: 1 }} />
 
                 <Button title="" type="clear"
                     icon={<Icon name="people" size={22} style={styles.icon} />}></Button>
+                <View style={{ flex: 1 }} />
 
                 <Button title="" type="clear"
                     icon={<Icon name="plus" size={22} style={styles.icon} />}></Button>
+                <View style={{ flex: 1 }} />
 
                 <Button title="" type="clear"
                     icon={<Icon name="bell" size={22} style={styles.icon} />}></Button>
-
+                <View style={{ flex: 1 }} />
 
                 <Button title="" type="clear"
                     icon={<Icon name="settings" size={22} style={styles.icon} />}></Button>
@@ -42,14 +45,9 @@ export default class BottomBar extends React.Component
     }
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexGrow: 1,
-        alignItems: 'stretch',
-        justifyContent: 'space-between',
-    },
     icon: {
         color: Colors.icon,
-        paddingHorizontal: 8,
+        paddingHorizontal: 10,
+        paddingBottom: 8,
     },
 });

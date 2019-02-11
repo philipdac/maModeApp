@@ -21,14 +21,16 @@ export default class TopBar extends React.Component
         const { search } = this.state;
 
         return (
-            <View style={{ flexDirection: "row", marginTop: 12 }}>
+            <View style={{ flexDirection: "row", height: 56, backgroundColor: Colors.grey100 }}>
                 <Button title="" type="clear"
                     icon={<Icon name="camera" size={22} style={styles.icon} />}></Button>
 
-                <TextInput style={styles.searchContainer} placeholder="Search"></TextInput>
-
+                <View style={{ paddingTop: 8 }}>
+                    <TextInput style={styles.searchContainer} placeholder="Search"></TextInput>
+                </View>
                 <Button title="" type="clear"
                     icon={<Icon name="bubble" size={22} style={styles.icon} />}></Button>
+
             </View>
         );
     }
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     searchContainer: {
-        backgroundColor: '#F5F5F5',
+        backgroundColor: 'white',
         borderRadius: 25,
         borderWidth: 0,
         color: 'white',
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
         paddingTop: 11,
         width: Dimensions.get('window').width,
         maxWidth: 300,
-        marginBottom: 20,
     },
     icon: {
         color: Colors.icon,
         paddingHorizontal: 8,
+        paddingTop: 8,
     },
 });
