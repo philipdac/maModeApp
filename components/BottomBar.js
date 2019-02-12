@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react'
 import { Dimensions, StyleSheet, View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import Colors from '../constants/Colors';
 
-export default class BottomBar extends React.Component
+export default class BottomBar extends Component
 {
-    state = {
-        search: '',
-    };
+    constructor(props)
+    {
+        super(props);
+
+        this.state = {
+            search: '',
+        };
+    }
 
     updateSearch = search =>
     {
@@ -38,11 +43,15 @@ export default class BottomBar extends React.Component
                     icon={<Icon name="bell" size={22} style={styles.icon} />}></Button>
                 <View style={{ flex: 1 }} />
 
-                <Button title="" type="clear"
-                    icon={<Icon name="settings" size={22} style={styles.icon} />}></Button>
+                <Button title="" type="clear" onPress={this._logout}
+                    icon={<Icon name="logout" size={22} style={styles.icon} />}></Button>
             </View>
         );
     }
+    _logout = () =>
+    {
+        // this.props.navigation.navigate('Login');
+    };
 }
 const styles = StyleSheet.create({
     icon: {

@@ -8,7 +8,10 @@ export default class LoginScreen extends Component
     constructor(props)
     {
         super(props);
-        this.state = { username: 'maMode@gmail.com', password: 'Abcd@4321' };
+        this.state = {
+            username: 'maMode@gmail.com', password: 'Abcd@4321',
+            lockedUsername: 'maMode@gmail.com', lockedPassword: 'Abcd@4321',
+        };
     }
     render()
     {
@@ -24,7 +27,7 @@ export default class LoginScreen extends Component
 
                     <TextInput style={[styles.input]} placeholder='Email, phone number or username'
                         autoCapitalize='none' autoCorrect={false} keyboardType='email-address'
-                        onChangeText={(text) => this.setState({ username })}
+                        onChangeText={(text) => this.setState({ username: text })}
                         value={this.state.username}></TextInput>
 
                     <TextInput style={[styles.input, styles.inputPassword]} placeholder='Password' secureTextEntry={true}
@@ -53,6 +56,12 @@ export default class LoginScreen extends Component
     }
     _loginAsync = async () =>
     {
+        if (this.state.username != this.state.lockedUsername || this.state.lockedPassword != this.state.password) {
+            return;
+        }
+
+        console.log(this.props);
+
         await AsyncStorage.setItem('userToken', 'authenticated');
         this.props.navigation.navigate('Home');
     };
