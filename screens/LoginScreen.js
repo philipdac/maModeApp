@@ -31,7 +31,7 @@ export default class LoginScreen extends Component
                         value={this.state.username}></TextInput>
 
                     <TextInput style={[styles.input, styles.inputPassword]} placeholder='Password' secureTextEntry={true}
-                        onChangeText={(text) => this.setState({ password })}
+                        onChangeText={(text) => this.setState({ password: text })}
                         value={this.state.password}></TextInput>
 
                     <TouchableOpacity style={[styles.buttonContainer]}
